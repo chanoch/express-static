@@ -1,0 +1,8 @@
+node_modules
+*.code-workspace
+TODO.md
+src
+resources
+test
+.emv
+.env.*

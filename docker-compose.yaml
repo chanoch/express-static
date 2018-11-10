@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ebay-listings-integrator:
+    image: ${IMAGE_NAME}
+    container_name: ${CONTAINER_NAME}
+    volumes:
+      - "./conf/.env:/usr/app/.env"
+      - "./logs/:/home/node"
+
+networks:
+  default:
+    external:
+      name: ${NETWORK_NAME}

@@ -1,0 +1,32 @@
+{
+  "name": "express-static",
+  "version": "0.1.0",
+  "description": "An express static server which defines a docker container build and both node and docker start scripts",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon --watch ./public server.js",
+    "start": "node server.js",
+    "docker-build": "docker build -t {IMAGE_NAME} .",
+    "docker-run": "docker run --restart=always -d --name {CONTAINER_NAME} --expose ${PORT} --publish ${HOST_ADDR}:${HOST_PORT}:${PORT} --env PORT=${PORT} {IMAGE_NAME}",
+    "docker-publish": "docker push {IMAGE_NAME}"
+  },
+  "author": "chanoch <chanoch@seguroapp.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "express-vanilla": "0.0.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chanoch/express-static.git"
+  },
+  "keywords": [
+    "expressjs",
+    "static",
+    "website"
+  ],
+  "bugs": {
+    "url": "https://github.com/chanoch/express-static/issues"
+  },
+  "homepage": "https://github.com/chanoch/express-static#readme"
+}
